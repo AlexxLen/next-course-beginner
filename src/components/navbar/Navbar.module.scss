@@ -1,0 +1,41 @@
+.container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.link:hover {
+  color: #26956e;
+  border-bottom: 2px solid #26956e;
+}
+
+.activeLink {
+  color: #26956e;
+  border-bottom: 2px solid #26956e;
+}
+
+.logout {
+  padding: 10px;
+  border: none;
+  background-color: #26956e;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
