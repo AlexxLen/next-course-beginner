@@ -1,29 +1,28 @@
 import Image from 'next/image';
 import styles from './page.module.scss';
 
-// const getData = async (id) => {
-//   const res = await fetch(`${process.env.NEXT_API_URL}/api/posts/${id}`, {
-//     cache: 'no-store'
-//   });
+const getData = async (id) => {
+  const res = await fetch(`${process.env.NEXT_API_URL}/api/posts/${id}`, {
+    cache: 'no-store'
+  });
 
-//   if (!res.ok) {
-//     return notFound();
-//   }
+  if (!res.ok) {
+    return notFound();
+  }
 
-//   return res.json();
-// };
+  return res.json();
+};
 
-// export const generateMetadata = async ({ params: { id } }) => {
-//   const post = await getData(id);
-//   return {
-//     title: post.title,
-//     description: post.descr
-//   };
-// };
+export const generateMetadata = async ({ params: { id } }) => {
+  const post = await getData(id);
+  return {
+    title: post.title,
+    description: post.descr
+  };
+};
 
 const BlogPost = async ({ params: { id } }) => {
-  // const data = await getData(id);
-  const data = {};
+  const data = await getData(id);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
