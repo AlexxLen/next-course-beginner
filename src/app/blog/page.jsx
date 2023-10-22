@@ -2,19 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
-const getData = async () => {
-  const res = await fetch(`${process.env.NEXT_API_URL}/api/posts`, {
-    next: {
-      revalidate: 10
-    }
-  });
+// const getData = async () => {
+//   const res = await fetch(`${process.env.NEXT_API_URL}/api/posts`, {
+//     next: {
+//       revalidate: 10
+//     }
+//   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data');
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
 export const metadata = {
   title: 'Blog',
@@ -22,11 +22,12 @@ export const metadata = {
 };
 
 const Blog = async () => {
-  const data = await getData();
+  // const data = await getData();
+  const data = [];
 
   return (
     <div className={styles.container}>
-      {data.map((item) => (
+      {data?.map((item) => (
         <Link key={item._id} href={`/blog/${item._id}`}>
           <div className={styles.item}>
             <div className={styles.imgContainer}>
